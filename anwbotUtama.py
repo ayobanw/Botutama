@@ -197,7 +197,7 @@ def welcome_member(msg):
     bot.send_message(msg.chat.id, WELCOME_TEXT, reply_markup=bottom_buttons())
 
 # ================= RUN =================
-if name == "main":
+if __name__ == "__main__":
     print("\033[1;31m🤖 Bot berjalan (AnwBotGroup)....\033[0m")
     # Jalankan Flask dalam thread supaya tak kacau polling bot
     threading.Thread(target=run).start()

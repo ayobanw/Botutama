@@ -17,7 +17,7 @@ import telebot
 from telebot import apihelper
 
 # Letak ni sebelum baris bot = telebot.TeleBot(TOKEN)
-apihelper.proxy = {'https': 'http://proxy.server:3128'}
+#apihelper.proxy = {'https': 'http://proxy.server:3128'}
 
 TOKEN = "8300282726:AAEeRUjkb0yDWMfUgwFs-hHrY5AP_Hu16T0"
 bot = telebot.TeleBot(TOKEN)

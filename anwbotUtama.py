@@ -19,8 +19,6 @@ import telebot
 # Letak ni sebelum baris bot = telebot.TeleBot(TOKEN)
 #apihelper.proxy = {'https': 'http://proxy.server:3128'}
 
-#TOKEN = "8300282726:AAEeRUjkb0yDWMfUgwFs-hHrY5AP_Hu16T0"
-bot = telebot.TeleBot(TOKEN)
 # ================= CONFIG =================
 TOKEN = "8300282726:AAEeRUjkb0yDWMfUgwFs-hHrY5AP_Hu16T0"
 GROUP_USERNAME = "@GroupBotAnw"

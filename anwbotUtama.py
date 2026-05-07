@@ -3,17 +3,16 @@ import threading
 from flask import Flask
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-# --- ENJIN RENDER (WAJIB ADA) ---
+# --- ENGINE RENDER (WAJIB UNTUK LIVE 24 JAM) ---
 app = Flask('')
 @app.route('/')
 def home(): return "Bot is alive!"
-def run(): app.run(host='0.0.0.0', port=8080)
+def run(): app.run(host='0.0.0.0', port=10000)
 
-# --- CONFIG ASAL AWAK ---
+# --- CONFIG BOT ANW STORE ---
 TOKEN = "8300282726:AAEeRUjkbOyDWMfUgwFs-hHrY5AP_Hu16T0"
 bot = telebot.TeleBot(TOKEN, parse_mode="Markdown")
 
-# Ganti ID Group & Link Gambar ikut yang asal awak punya
 CHANNEL_ID = -1002447953683  
 CHANNEL_LINK = "https://t.me/+3x10prkLlfl2ODll"
 ADMIN_LINK = "https://t.me/ayobanw"
@@ -31,7 +30,6 @@ def main_menu():
     )
     return kb
 
-# --- FUNGSI ASAL: WAJIB JOIN GROUP ---
 def is_subscribed(user_id):
     try:
         status = bot.get_chat_member(CHANNEL_ID, user_id).status
@@ -42,15 +40,8 @@ def is_subscribed(user_id):
 @bot.message_handler(commands=['start'])
 def start(msg):
     if is_subscribed(msg.from_user.id):
-        # Kalau dah join, hantar GAMBAR + MENU
-        bot.send_photo(
-            msg.chat.id, 
-            IMAGE_URL, 
-            caption="🏠 *Menu Utama ANW STORE*", 
-            reply_markup=main_menu()
-        )
+        bot.send_photo(msg.chat.id, IMAGE_URL, caption="🏠 *Menu Utama ANW STORE*", reply_markup=main_menu())
     else:
-        # Kalau belum join, paksa join
         kb = InlineKeyboardMarkup()
         kb.add(InlineKeyboardButton("✅ JOIN GROUP DULU", url=CHANNEL_LINK))
         kb.add(InlineKeyboardButton("🔄 SAYA DAH JOIN", callback_data="check_status"))
@@ -64,24 +55,60 @@ def check_status(call):
     else:
         bot.answer_callback_query(call.id, "⚠️ Awak belum join lagi!", show_alert=True)
 
-# --- SEMUA LIST KERETA & BESI (IKUT ASAL 100%) ---
+# --- LIST KERETA (IKUT FORMAT SEBARIS KE BAWAH) ---
 @bot.callback_query_handler(func=lambda c: c.data == "kereta_menu")
 def kereta_menu(call):
     text = (
         "🏎️ *LIST CODE KERETA*\n\n"
-        "202 Pagani Zonda\n204 Mercedes Van\n205 Porsche RWB\n206 Alfa Romeo Giulia\n"
-        "207 Porsche Le Mans\n208 Ford Bronco\n209 Lexus IS300 2009\n210 Corvette C5\n"
-        "211 Audi RS7\n212 6x6 Mercedes G63\n213 Nissan R33\n214 Toyota Chaser MK2\n"
-        "215 Chevy Tahoe\n216 McLaren Senna\n217 BMW X7\n218 Toyota Crown\n"
-        "219 VW Passat\n220 Fairlady Z\n221 Old NSX\n222 Porsche 918\n"
-        "223 DMC Delorean\n224 Subaru Raptor Eye\n225 Honda DelSol\n226 Fiat Van\n"
-        "227 AMG One\n228 Audi RS2\n229 Ferrari F40\n230 Land Rover\n"
-        "231 Toyota LC250 Old\n232 Kia Stinger\n233 BMW i7\n234 Newer Aston Martin\n"
-        "235 Newer Mustang\n236 RV\n237 Semi Truck\n238 New BMW M5\n"
-        "239 New Escalade\n240 Ford Focus\n241 LaFerrari\n242 New Camaro\n"
-        "243 Jeep Gladiator\n244 New Land Rover\n245 Toyota GR Yaris\n"
-        "248 New Russian Car\n249 New Maybach\n250 Porsche Carrera GT\n"
-        "253 FORD TURCKS NEW\n257 BMW M2 NEW\n259 FORTUNER NEW"
+        "202 Pagani Zonda\n"
+        "204 Mercedes Van\n"
+        "205 Porsche RWB\n"
+        "206 Alfa Romeo Giulia\n"
+        "207 Porsche Le Mans\n"
+        "208 Ford Bronco\n"
+        "209 Lexus IS300 2009\n"
+        "210 Corvette C5\n"
+        "211 Audi RS7\n"
+        "212 6x6 Mercedes G63\n"
+        "213 Nissan R33\n"
+        "214 Toyota Chaser MK2\n"
+        "215 Chevy Tahoe\n"
+        "216 McLaren Senna\n"
+        "217 BMW X7\n"
+        "218 Toyota Crown\n"
+        "219 VW Passat\n"
+        "220 Fairlady Z\n"
+        "221 Old NSX\n"
+        "222 Porsche 918\n"
+        "223 DMC Delorean\n"
+        "224 Subaru Raptor Eye\n"
+        "225 Honda DelSol\n"
+        "226 Fiat Van\n"
+        "227 AMG One\n"
+        "228 Audi RS2\n"
+        "229 Ferrari F40\n"
+        "230 Land Rover\n"
+        "231 Toyota LC250 Old\n"
+        "232 Kia Stinger\n"
+        "233 BMW i7\n"
+        "234 Newer Aston Martin\n"
+        "235 Newer Mustang\n"
+        "236 RV\n"
+        "237 Semi Truck\n"
+        "238 New BMW M5\n"
+        "239 New Escalade\n"
+        "240 Ford Focus\n"
+        "241 LaFerrari\n"
+        "242 New Camaro\n"
+        "243 Jeep Gladiator\n"
+        "244 New Land Rover\n"
+        "245 Toyota GR Yaris\n"
+        "248 New Russian Car\n"
+        "249 New Maybach\n"
+        "250 Porsche Carrera GT\n"
+        "253 FORD TURCKS NEW\n"
+        "257 BMW M2 NEW\n"
+        "259 FORTUNER NEW"
     )
     kb = InlineKeyboardMarkup()
     kb.add(InlineKeyboardButton("⬅ Kembali", callback_data="back_menu"))

@@ -14,7 +14,7 @@ def run():
     app.run(host='0.0.0.0', port=8080)
 
 # ================= CONFIG BOT =================
-TOKEN = "8300282726:AAEeRUjkbOyDWMfUgwFs-hHrY5AP_Hu16T0"
+TOKEN = "8300282726:AAEeRUjkb0yDWMfUgwFs-hHrY5AP_Hu16T0"
 bot = telebot.TeleBot(TOKEN, parse_mode="Markdown")
 
 ADMIN_LINK = "https://t.me/ayobanw"

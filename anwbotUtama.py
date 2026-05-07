@@ -13,7 +13,6 @@ def run():
 # Jalan dalam thread supaya tak kacau bot Telegram
 threading.Thread(target=run).start()
 
-bot.infinity_polling()
 
 import telebot
 #from telebot import apihelper

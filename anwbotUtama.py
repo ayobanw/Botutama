@@ -113,3 +113,66 @@ def kereta_menu(call):
     kb = InlineKeyboardMarkup()
     kb.add(InlineKeyboardButton("⬅ Kembali", callback_data="back_menu"))
     bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=kb)
+
+# --- LIST BESI & SPOILER (SEBARIS KE BAWAH) ---
+@bot.callback_query_handler(func=lambda c: c.data == "custom_menu")
+def custom_menu(call):
+    text = (
+        "🛠️ *CODE CUSTOM SPOILER DAN BESI DALAM*\n\n"
+        "🔩 *!! C O D E BESI DLM !!*\n"
+        "4 - Besi ampaian/Bmw x6\n"
+        "5 - Bar depan\n"
+        "6 - roofbox/skybox\n"
+        "10 - Lampu roof\n"
+        "12 - besi rack lata\n"
+        "13 - host lata\n"
+        "14 - roof RR\n"
+        "15 - besi blakang ford rangers\n"
+        "20 - besi rack hakosuka\n"
+        "32 - tire blakang jeep\n"
+        "33 - besi atas jeep\n"
+        "34 - besi blakang jeep\n"
+        "39 - besi dalam dodge\n"
+        "45 - besi atas hammer\n"
+        "46/47 - besi blakang hilux\n"
+        "48 - besi atas hilux\n"
+        "50/52 - besi bar atas hilux\n"
+        "56 - sportlight jeep\n"
+        "59/60 - rack ford rangers\n"
+        "61/62 - besi blakang hilux\n"
+        "63 - besi blakang hilux papan\n"
+        "69 - besi rack atas myvi\n"
+        "75 - besi chavrolet\n\n"
+        "📍 *CODE SPOILER PILIHAN*\n"
+        "16 - spoiler merc Amg\n"
+        "19 - spoiler r35\n"
+        "41 - spoiler 350z\n"
+        "49 - spoiler brz\n"
+        "65 - spoiler rx7\n"
+        "69 - spoiler nsx\n"
+        "77 - spoiler rx8\n"
+        "93 - spoiler Itik\n"
+        "95 - spoiler ducktail infinity\n"
+        "96 - spoiler wing infinity\n"
+        "106 - spoiler wing ek9\n"
+        "135 - spoiler audi r8v8\n"
+        "148 - spoiler ferrari\n"
+        "155 - spoiler wing bmw\n"
+        "168 - spoiler Evo\n"
+        "170 - spoiler Lambo"
+    )
+    kb = InlineKeyboardMarkup()
+    kb.add(InlineKeyboardButton("⬅ Kembali", callback_data="back_menu"))
+    bot.edit_message_text(text, call.message.chat.id, call.message.message_id, reply_markup=kb)
+
+@bot.callback_query_handler(func=lambda c: c.data == "back_menu")
+def back_menu(call):
+    bot.edit_message_text("🏠 *Menu Utama*", call.message.chat.id, call.message.message_id, reply_markup=main_menu())
+
+# --- JALANKAN ---
+if name == "main":
+    t = threading.Thread(target=run)
+    t.daemon = True
+    t.start()
+    print("Bot ANW Store sedia berkhidmat!")
+    bot.infinity_polling()

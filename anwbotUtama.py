@@ -14,7 +14,7 @@ TOKEN = "8300282726:AAEeRUjkb0yDWMfUgwFs-hHrY5AP_Hu16T0"
 bot = telebot.TeleBot(TOKEN, parse_mode="Markdown")
 
 CHANNEL_ID = -1002447953683  
-CHANNEL_LINK = "https://t.me/+3x10prkLlfl2ODll"
+CHANNEL_LINK = "https://t.me/GroupBotAnw"
 ADMIN_LINK = "https://t.me/ayobanw"
 TOOL_LINK = "https://anwstore.my.id"
 IMAGE_URL = "https://files.catbox.moe/b39056.jpg" 

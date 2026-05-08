@@ -4,7 +4,7 @@ from flask import Flask
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 # --- ENGINE RENDER ---
-app = flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def home(): 

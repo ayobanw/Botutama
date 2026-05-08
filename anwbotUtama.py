@@ -169,7 +169,7 @@ def back_menu(call):
     bot.edit_message_text("🏠 *Menu Utama*", call.message.chat.id, call.message.message_id, reply_markup=main_menu())
 
 # --- FIX NAME ERROR (TANDA __ DAH BETUL) ---
-if __name__ == "__main__":
+if __name__ == "__main__":.
     t = threading.Thread(target=run)
     t.daemon = True
     t.start()

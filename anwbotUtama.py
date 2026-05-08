@@ -12,7 +12,7 @@ def run():
     app.run(host='0.0.0.0', port=10000)
 
 # --- CONFIG BOT ANW STORE ---
-TOKEN = "8300282726:AAEeRUjkbOyDWMfUgwFs-hHrY5AP_Hu16T0"
+TOKEN = "8300282726:AAH_yzVX3nFioeyZhCGPH4x43VfXRhi4pHM"
 bot = telebot.TeleBot(TOKEN, parse_mode="Markdown")
 
 CHANNEL_ID = -1003526954874

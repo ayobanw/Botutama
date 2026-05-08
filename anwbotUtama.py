@@ -43,12 +43,12 @@ def is_subscribed(user_id):
 @bot.message_handler(commands=['start'])
 def start(msg):
     if True: 
-    bot.send_photo(msg.chat.id, IMAGE_URL, caption="*Menu Utama ANW STORE*", reply_markup=main_menu())
+        bot.send_photo(msg.chat.id, IMAGE_URL, caption="*Menu Utama ANW STORE*", reply_markup=main_menu())
     
     # ID kau (1159846205) terus lepas menu. Orang lain wajib join group.
     #if msg.from_user.id == 1159846205 or is_subscribed(msg.from_user.id):
        #bot.send_photo(msg.chat.id, IMAGE_URL, caption="🏠 *Menu Utama ANW STORE*", reply_markup=main_menu())
-# Ganti baris 46 kepada ini sementara:
+
 
     else:
         kb = InlineKeyboardMarkup()

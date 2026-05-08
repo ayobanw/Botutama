@@ -5,7 +5,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 # --- ENGINE RENDER ---
 app = flask('')
-@app.route('/')
+    @app.route('/')
 def home(): 
     return "Bot is live!"
 def run(): 

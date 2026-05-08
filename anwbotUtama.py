@@ -17,7 +17,7 @@ CHANNEL_ID = -1003526954874
 CHANNEL_LINK = "https://t.me/GroupBotAnw"
 ADMIN_LINK = "https://t.me/ayobanw"
 TOOL_LINK = "https://anwstore.my.id"
-IMAGE_URL = "https://files.catbox.moe/b39056.jpg" 
+IMAGE_URL = "https://raw.githubusercontent.com/AyobANW/anwbotUtams/main/anwbot.jpg" 
 
 def main_menu():
     kb = InlineKeyboardMarkup(row_width=1)
